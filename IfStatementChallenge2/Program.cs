@@ -11,17 +11,24 @@ namespace IfStatementChallenge2
         static int score;
         static int highscore = 19;
         static string highscorePlayer = "Lucas";
-
+        
         static void Main(string[] args)
         {
             string name;
 
             Console.WriteLine("Whats your name?");
             name = Console.ReadLine();
-
             Console.WriteLine("Answer the questions to win points, {0}", name);
             Console.WriteLine();
 
+            Game();
+            Scores(score, name);
+
+            Console.Read();
+        }
+
+        public static void Game()
+        {
             Console.WriteLine("How much is 3 + 4?");
             string answer1 = Console.ReadLine();
 
@@ -71,10 +78,6 @@ namespace IfStatementChallenge2
                     score = 0;
                 }
             }
-
-            Scores(score, name);
-
-            Console.Read();
         }
 
         public static void Scores(int score, string playerName)
